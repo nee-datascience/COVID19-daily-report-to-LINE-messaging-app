@@ -1,7 +1,9 @@
+# Import required packages
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as soup
 
+# Scraping
 def Scraping(Country):
  try:
  	driver = webdriver.Edge('c:\\Python37\\msedgedriver.exe')
@@ -20,6 +22,7 @@ def Scraping(Country):
  except:
  	return 'No Result'
 
+# Send message to LINE messaging app 
 from songline import Sendline
 token = 'cxTFICPuXUU9mgbjiJBYqgzZnxxs1jdNDNuzqHVktux'	#Web Scraping
 #token = 'oOCTcbTSfucGOKrdbTTdEb1wWYn8EhIwOJuveH1zCDI'	#COVID-19 Report
@@ -27,20 +30,3 @@ messenger = Sendline(token)
 
 message = Scraping('australia')
 messenger.sendtext(message)
-message = Scraping('thailand')
-messenger.sendtext(message)
-
-'''
-table = driver.find_element_by_xpath('//*[@id="main_table_countries_today"]/tbody[1]')
-country_element = table.find_element_by_xpath("//td[contains(.,'Norway')]")
-row = country_element.find_element_by_xpath("./..")
-
-data = row.text.split(" ")
-total_cases = data[1]
-new_cases = data[2]
-total_deaths = data[3]
-new_deaths = data[4]
-active_cases = data[5]
-total_recovered = data[6]
-serious_critical = data[7]
-'''
