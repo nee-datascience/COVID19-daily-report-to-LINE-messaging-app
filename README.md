@@ -1,4 +1,4 @@
-# COVID19 Daily Report to LINE Messageing App
+# COVID19 Daily Report to LINE Messaging App
 
 To send Covid-19 daily report (number of cases) per country to LINE messaging apps. 
 
